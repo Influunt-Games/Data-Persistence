@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,8 @@ using UnityEngine.UI;
 
 public class MainManager : MonoBehaviour
 {
+    public static MainManager Instance;
+
     public Brick BrickPrefab;
     public int LineCount = 6;
     public Rigidbody Ball;

@@ -8,11 +8,11 @@ public class DataManager : MonoBehaviour
 {
     public static DataManager Instance;
 
-    public Text BestScoreText;
+    public  Text BestScoreText;
     public GameObject NameTextGO;
-    //public string NameText;
-    public Text NameText;
-    public int HighScore;
+    public static string NameText;
+    //public Text NameText;
+    public static int HighScore;
 
     public void Awake()
     {
@@ -26,12 +26,15 @@ public class DataManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
+        
     }
 
     // Start is called before the first frame update
     void Start()
     {
-     
+        NameTextGO = GameObject.Find("Name Text");
+        NameText = NameTextGO.GetComponent<TextMeshPro>().text.ToString();
+        
     }
 
     // Update is called once per frame
@@ -46,9 +49,15 @@ public class DataManager : MonoBehaviour
     }
     
 
+
+
+
+
+
     public void UpdateName()
     {
-        //NameText = NameTextGO.GetComponent<TextMeshPro>().text;
-        string userID = NameText.text.ToString();
+
+         
+        //string userID = NameText.text.ToString();
     }
 }

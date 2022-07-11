@@ -2,17 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class DataManager : MonoBehaviour
 {
     public static DataManager Instance;
 
-    public  Text BestScoreText;
-    public GameObject NameTextGO;
-    public static string NameText;
-    //public Text NameText;
-    public static int HighScore;
+    
+    public TMP_InputField inputField;
+    public string NameText;
+
+    public Text BestScoreText;
+    public string HighScoreName;
+    public int HighScore;
 
     public void Awake()
     {
@@ -29,35 +32,22 @@ public class DataManager : MonoBehaviour
         
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        NameTextGO = GameObject.Find("Name Text");
-        NameText = NameTextGO.GetComponent<TextMeshPro>().text.ToString();
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            UpdateName();
-            Debug.Log(NameText);
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    UpdateName();
+        //    Debug.Log(NameText);
+        //}
        
     }
-    
-
-
-
 
 
 
     public void UpdateName()
     {
+        NameText = inputField.text;
 
-         
-        //string userID = NameText.text.ToString();
     }
 }

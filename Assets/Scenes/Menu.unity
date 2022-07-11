@@ -152,9 +152,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16c0986b81c5a4479f714590b9c06ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputField: {fileID: 1640626564}
+  NameText: 
   BestScoreText: {fileID: 0}
-  NameTextGO: {fileID: 145238144}
-  NameText: {fileID: 0}
+  HighScoreName: 
   HighScore: 0
 --- !u!4 &17122452
 Transform:
@@ -1714,7 +1715,19 @@ MonoBehaviour:
       m_Calls: []
   m_OnDeselect:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 17122451}
+        m_TargetAssemblyTypeName: DataManager, Assembly-CSharp
+        m_MethodName: UpdateName
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnTextSelection:
     m_PersistentCalls:
       m_Calls: []

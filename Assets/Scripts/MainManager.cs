@@ -23,6 +23,7 @@ public class MainManager : MonoBehaviour
     public int highScore;
 
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +41,8 @@ public class MainManager : MonoBehaviour
                 brick.onDestroyed.AddListener(AddPoint);
             }
         }
+
+        HighScore();
     }
 
     private void Update()
@@ -74,9 +77,10 @@ public class MainManager : MonoBehaviour
 
     public void GameOver()
     {
-        HighScore();
+
         m_GameOver = true;
         GameOverText.SetActive(true);
+        HighScore();
     }
 
     public void NewNameSelected(Text text)
@@ -86,11 +90,18 @@ public class MainManager : MonoBehaviour
 
     public void HighScore()
     {
-        if(m_Points > highScore)
+        if(m_Points > DataManager.Instance.HighScore)
         {
             highScore = m_Points;
+
+
+            DataManager.Instance.HighScoreName = DataManager.Instance.NameText;
+            DataManager.Instance.HighScore = highScore;
         }
 
-        bestScoreText.text = "Best Score : " + DataManager.NameText + " : " + highScore; 
+
+        bestScoreText.text = "Best Score : " + DataManager.Instance.HighScoreName + " : " + DataManager.Instance.HighScore;
+
+
     }
 }

@@ -45,9 +45,9 @@ public class DataManager : MonoBehaviour
 
 
 
-    public void UpdateName()
-    {
-        NameText = inputField.text;
-
-    }
+   // public void UpdateName()
+   // {
+   //     NameText = inputField.text;
+   //
+   // }
 }

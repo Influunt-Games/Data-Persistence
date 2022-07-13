@@ -90,18 +90,22 @@ public class MainManager : MonoBehaviour
 
     public void HighScore()
     {
-        if(m_Points > DataManager.Instance.HighScore[0])
+        for (int i = 0; i < DataManager.Instance.HighScore.Length; i++)
         {
-            highScore = m_Points;
+            if (m_Points > DataManager.Instance.HighScore[0])
+            {
+                highScore = m_Points;
 
 
-            DataManager.Instance.HighScoreName = DataManager.Instance.NameText;
-            DataManager.Instance.HighScore[0] = highScore;
+                DataManager.Instance.HighScoreName[i] = DataManager.Instance.NameText;
+                DataManager.Instance.HighScore[i] = highScore;
+
+                DataManager.Instance.HighScore[i + 1] = DataManager.Instance.HighScore[i];
+            }
+
+
+            bestScoreText.text = "Best Score : " + DataManager.Instance.HighScoreName[0] + " : " + DataManager.Instance.HighScore[0];
+
         }
-
-
-        bestScoreText.text = "Best Score : " + DataManager.Instance.HighScoreName + " : " + DataManager.Instance.HighScore[0];
-
-
     }
 }

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -15,6 +16,8 @@ using UnityEditor;
 
 public class MenuUIHandler : MonoBehaviour
 {
+
+    public TMP_InputField nameInputField;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +35,20 @@ public class MenuUIHandler : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+
+    public void OnEndEdit()
+    {
+
+    }
+
+
+    public void UpdateName()
+    {
+        DataManager.Instance.NameText = nameInputField.text;
+    }
+
+
+
 
     public void Exit()
     {

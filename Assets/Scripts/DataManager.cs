@@ -15,7 +15,7 @@ public class DataManager : MonoBehaviour
 
     public Text BestScoreText;
     public string HighScoreName;
-    public int HighScore;
+    public int[] HighScore;
 
     public void Awake()
     {

@@ -52,21 +52,6 @@ public class DataManager : MonoBehaviour
     }
 
 
-    void Update()
-    {
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    UpdateName();
-        //    Debug.Log(NameText);
-        //}
-       
-    }
 
+}   
 
-
-   // public void UpdateName()
-   // {
-   //     NameText = inputField.text;
-   //
-   // }
-}

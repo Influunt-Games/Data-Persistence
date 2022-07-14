@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.IO;
 using TMPro;
 
 public class DataManager : MonoBehaviour
@@ -30,6 +31,24 @@ public class DataManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         
+    }
+
+    [System.Serializable]
+    class SaveData
+    {
+        public int[] HighScore;
+        public string[] HighScoreName;
+    }
+
+    public void SaveHighScore()
+    {
+        SaveData data = new SaveData();
+        data.HighScore = HighScore;
+        data.HighScoreName = HighScoreName;
+
+        string json = JsonUtility.ToJson(data);
+
+        File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
     }
 
 

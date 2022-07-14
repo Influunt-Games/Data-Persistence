@@ -42,7 +42,7 @@ public class MainManager : MonoBehaviour
             }
         }
 
-        HighScore();
+        bestScoreText.text = "Best Score : " + DataManager.Instance.HighScoreName[0] + " : " + DataManager.Instance.HighScore[0];
     }
 
     private void Update()
@@ -90,18 +90,29 @@ public class MainManager : MonoBehaviour
 
     public void HighScore()
     {
+
+        highScore = m_Points;
+
         for (int i = 0; i < DataManager.Instance.HighScore.Length; i++)
         {
-            if (m_Points > DataManager.Instance.HighScore[0])
+            if (highScore > DataManager.Instance.HighScore[0])
             {
-                highScore = m_Points;
+
+
 
 
                 DataManager.Instance.HighScoreName[i] = DataManager.Instance.NameText;
-                DataManager.Instance.HighScore[i] = highScore;
+                DataManager.Instance.HighScore[0] = highScore;
 
-                DataManager.Instance.HighScore[i + 1] = DataManager.Instance.HighScore[i];
+
             }
+            
+            if(highScore > DataManager.Instance.HighScore[1])
+            {
+                DataManager.Instance.HighScore[1] = highScore;
+            }
+
+
 
 
             bestScoreText.text = "Best Score : " + DataManager.Instance.HighScoreName[0] + " : " + DataManager.Instance.HighScore[0];

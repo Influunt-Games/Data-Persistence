@@ -101,7 +101,7 @@ public class MainManager : MonoBehaviour
 
 
 
-                DataManager.Instance.HighScoreName[i] = DataManager.Instance.NameText;
+                DataManager.Instance.HighScoreName[0] = DataManager.Instance.NameText;
                 DataManager.Instance.HighScore[0] = highScore;
 
 

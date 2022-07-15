@@ -19,15 +19,22 @@ public class MenuUIHandler : MonoBehaviour
 
     public TMP_InputField nameInputField;
 
+    void Start()
+    {
+        DataManager.Instance.LoadHighScore();
+    }
 
     public void StartNew()
     {
         SceneManager.LoadScene(1);
+
+        DataManager.Instance.LoadHighScore();
     }
 
-    public void OnEndEdit()
+    public void HighScoreButton()
     {
-
+        DataManager.Instance.LoadHighScore();
+        SceneManager.LoadScene(2);
     }
 
 
@@ -36,13 +43,23 @@ public class MenuUIHandler : MonoBehaviour
         DataManager.Instance.NameText = nameInputField.text;
     }
 
+    public void SaveHighScore()
+    {
+        DataManager.Instance.SaveHighScore();
+
+    }
+    public void LoadHighScore()
+    {
+        DataManager.Instance.LoadHighScore();
+
+    }
 
 
 
     public void Exit()
     {
 
-
+        DataManager.Instance.SaveHighScore();
 
 #if UNITY_EDITOR
         EditorApplication.ExitPlaymode();

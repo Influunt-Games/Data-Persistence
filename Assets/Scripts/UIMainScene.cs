@@ -5,20 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class UIMainScene : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void BackToMenu()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public void SaveHighScore()
+    {
+        DataManager.Instance.SaveHighScore();
+
     }
 }

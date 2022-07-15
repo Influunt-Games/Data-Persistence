@@ -81,6 +81,7 @@ public class MainManager : MonoBehaviour
         m_GameOver = true;
         GameOverText.SetActive(true);
         HighScore();
+        DataManager.Instance.SaveHighScore();
     }
 
     public void NewNameSelected(Text text)
@@ -246,4 +247,5 @@ public class MainManager : MonoBehaviour
 
         
     }
+
 }
